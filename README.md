@@ -25,7 +25,8 @@ Nesse aplicativo é possível observar os seguintes requisitos:
 
 | LISTANDO OS CACHORROS | ADICIONANDO AOS FAVORITOS | REMOVENDO DOS FAVORITOS |
 | :---: | :---: | :---: |
-| ![Nov-01-2021 19-31-05](https://user-images.githubusercontent.com/80962534/139752533-25626b96-2325-47e6-95f8-5a3f4a95c2ca.gif) | ![Nov-01-2021 19-31-55](https://user-images.githubusercontent.com/80962534/139752540-5585bdfe-f6c3-4a74-9a48-cde17fbc4b53.gif) | ![Nov-01-2021 19-32-44](https://user-images.githubusercontent.com/80962534/139752903-392f3af2-5f3e-402d-a80b-ee34cda5ddd4.gif) |
+|     ![Nov-02-2021 17-05-34](https://user-images.githubusercontent.com/80962534/139945800-0200d73d-86e1-4f45-875f-9e14d850c329.gif) |  ![Nov-02-2021 17-15-38](https://user-images.githubusercontent.com/80962534/139946602-ada826cf-ab81-414d-9fea-40c17ea3d3b8.gif) | ![Nov-02-2021 17-16-04](https://user-images.githubusercontent.com/80962534/139946031-1c76986b-9bfb-4aac-bc5e-beeab835097b.gif) |
+
 
 ## QUANDO O USUÁRIO ESTIVER OFFILINE 
 
