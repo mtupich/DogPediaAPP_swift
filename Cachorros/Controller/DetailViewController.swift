@@ -109,6 +109,7 @@ extension DetailViewController: UITableViewDataSource {
                 cell.textLabel?.text = "Adicionar aos favoritos"
                 cell.accessoryType = .disclosureIndicator
                 cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+                
             }else {
                 cell.textLabel?.text = "Remover dos Favoritos"
                 cell.accessoryType = .disclosureIndicator
@@ -116,11 +117,6 @@ extension DetailViewController: UITableViewDataSource {
             }
 
 
-
-            
-         //   guard let image = cachorroTocado.image else {return UITableViewCell()}
-        //    cell.textLabel?.text = "Imagem: \(cachorroTocado.image)"
-            
         default:
             return UITableViewCell()
         }
@@ -151,7 +147,11 @@ extension DetailViewController: UITableViewDelegate {
             
             if(!favoritos){
 //                guard let dog = cachorroTocado else { return }
+               
+                //self.saveUserDefaults(dog: cachorroTocado) oi
+                
                 self.saveUserDefaults(dog: cachorroTocado)
+                
             }else{
 //                guard let nome = cachorroTocado.name else { return }
 //                guard let dog = cachorroTocado else {return}
@@ -161,6 +161,7 @@ extension DetailViewController: UITableViewDelegate {
             //criar uma VC para mostrar os fav
             // criar a exclusao de um cachorro fav
         }
+        
         
         
 }

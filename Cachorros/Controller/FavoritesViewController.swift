@@ -12,12 +12,45 @@ extension UIViewController {
 
     func saveUserDefaults(dog: Cachorro) {
         let defaults = UserDefaults.standard
+        
         var cachorrosFavoritados = self.getUserDefaults()
+        
         if !cachorrosFavoritados.contains(where: {$0.name == dog.name}){ cachorrosFavoritados.append(dog)
+            let dialogMessage = UIAlertController(title: "Adicionado aos favoritos com sucesso", message: "", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+            })
+            
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+            
             defaults.set(try? PropertyListEncoder().encode(cachorrosFavoritados), forKey: "cachorros")
+            
+            
+            
+        }else {
+            let dialogMessage = UIAlertController(title: "Já foi favoritado", message: "",
+                                                  preferredStyle: .alert)
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                 print("Ok button tapped")
+
+            })
+
+
+            // Add OK and Cancel button to dialog message
+            dialogMessage.addAction(ok)
+
+
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
         }
-        _ = self.getUserDefaults()
+        
+       // _ = self.getUserDefaults()
     }
+    
+    
     func deleteFavorite(dog: Cachorro) {
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?",
                                               preferredStyle: .alert)
@@ -49,6 +82,7 @@ extension UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
         
     }
+    
 
     func getUserDefaults() -> [Cachorro] {
 //        let defaults = UserDefaults.standard
@@ -63,3 +97,6 @@ extension UIViewController {
         }
     }
 }
+
+
+
