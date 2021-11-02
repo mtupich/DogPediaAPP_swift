@@ -26,8 +26,8 @@
 		721AA6ED272C9C6A009DD097 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721AA6EC272C9C6A009DD097 /* FavoritesViewController.swift */; };
 		721AA6F7272CCAE3009DD097 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721AA6F6272CCAE3009DD097 /* Extensions.swift */; };
 		72C2D1A42730412F0000A161 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2D1A32730412E0000A161 /* Functions.swift */; };
-		72C2D1AB27304DC20000A161 /* TesteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C2D1A927304DC20000A161 /* TesteController.swift */; };
-		72C2D1AC27304DC20000A161 /* TesteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C2D1AA27304DC20000A161 /* TesteController.xib */; };
+		72C2D1AC27304DC20000A161 /* OfflineController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C2D1AA27304DC20000A161 /* OfflineController.xib */; };
+		72FC2C6527316A5F009AB57F /* OfflineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC2C6427316A5F009AB57F /* OfflineController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 		721AA6EC272C9C6A009DD097 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		721AA6F6272CCAE3009DD097 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		72C2D1A32730412E0000A161 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		72C2D1A927304DC20000A161 /* TesteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteController.swift; sourceTree = "<group>"; };
-		72C2D1AA27304DC20000A161 /* TesteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TesteController.xib; sourceTree = "<group>"; };
+		72C2D1AA27304DC20000A161 /* OfflineController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfflineController.xib; sourceTree = "<group>"; };
+		72FC2C6427316A5F009AB57F /* OfflineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +122,10 @@
 		721AA67A272A0E5F009DD097 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				72C2D1A927304DC20000A161 /* TesteController.swift */,
 				721AA64E272A0E1F009DD097 /* ViewController.swift */,
 				721AA681272A0EA4009DD097 /* DetailViewController.swift */,
 				721AA6EC272C9C6A009DD097 /* FavoritesViewController.swift */,
+				72FC2C6427316A5F009AB57F /* OfflineController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 		721AA68D272AC2EC009DD097 /* CelulaCustomizadaCachorro */ = {
 			isa = PBXGroup;
 			children = (
-				72C2D1AA27304DC20000A161 /* TesteController.xib */,
+				72C2D1AA27304DC20000A161 /* OfflineController.xib */,
 				721AA68A272AC2D5009DD097 /* CelulaCustomizadaCachorroTableViewCell.xib */,
 				721AA689272AC2D5009DD097 /* CelulaCustomizadaCachorroTableViewCell.swift */,
 				721AA694272B0C26009DD097 /* ImageViewCell.swift */,
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				721AA68C272AC2D5009DD097 /* CelulaCustomizadaCachorroTableViewCell.xib in Resources */,
-				72C2D1AC27304DC20000A161 /* TesteController.xib in Resources */,
+				72C2D1AC27304DC20000A161 /* OfflineController.xib in Resources */,
 				721AA657272A0E23009DD097 /* LaunchScreen.storyboard in Resources */,
 				721AA654272A0E23009DD097 /* Assets.xcassets in Resources */,
 			);
@@ -293,11 +293,11 @@
 				721AA6ED272C9C6A009DD097 /* FavoritesViewController.swift in Sources */,
 				721AA67E272A0E84009DD097 /* API.swift in Sources */,
 				721AA699272C1E78009DD097 /* CachorroApiError.swift in Sources */,
-				72C2D1AB27304DC20000A161 /* TesteController.swift in Sources */,
 				72C2D1A42730412F0000A161 /* Functions.swift in Sources */,
 				721AA682272A0EA4009DD097 /* DetailViewController.swift in Sources */,
 				721AA695272B0C26009DD097 /* ImageViewCell.swift in Sources */,
 				721AA6F7272CCAE3009DD097 /* Extensions.swift in Sources */,
+				72FC2C6527316A5F009AB57F /* OfflineController.swift in Sources */,
 				721AA680272A0E95009DD097 /* HTTPMethod.swift in Sources */,
 				721AA69B272C1F0E009DD097 /* CachorroAPI.swift in Sources */,
 				721AA64B272A0E1F009DD097 /* AppDelegate.swift in Sources */,
