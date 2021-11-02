@@ -63,7 +63,7 @@ extension DetailViewController: UITableViewDataSource {
         // CELULA PADRÃO
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
 
-        cell.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15.0)
         cell.backgroundColor = .clear // setei uma cor no BG da detail
         
         
@@ -77,16 +77,19 @@ extension DetailViewController: UITableViewDataSource {
            // cellImage.backgroundColor = .clear // setei uma cor no BG da detail
             return cellImage
             
+            
         case 1:
             guard let name = cachorroTocado.name else { return UITableViewCell() }
             cell.textLabel?.text = "Nome: "
             cell.detailTextLabel?.text = name
-            cell.detailTextLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
+            cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15.0)
             
         case 2:
             guard let wikilink = cachorroTocado.wikilink else {return UITableViewCell()}
             cell.textLabel?.text = "Quer saber mais? Acesse: "
             cell.detailTextLabel?.text = wikilink
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
             cell.detailTextLabel?.textColor = .blue
             cell.accessoryType = .disclosureIndicator
             cell.selectionStyle = .blue
@@ -94,16 +97,22 @@ extension DetailViewController: UITableViewDataSource {
         case 3:
             guard let note = cachorroTocado.note else {return UITableViewCell()}
             cell.textLabel?.text = "Descrição: "
-            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
             cell.detailTextLabel?.text = note
-            
+            cell.detailTextLabel?.numberOfLines = 0
+           
+           
+          
+
         case 4:
             if(!favoritos){
                 cell.textLabel?.text = "Adicionar aos favoritos"
                 cell.accessoryType = .disclosureIndicator
+                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
             }else {
                 cell.textLabel?.text = "Remover dos Favoritos"
                 cell.accessoryType = .disclosureIndicator
+                cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
             }
 
 
@@ -147,13 +156,11 @@ extension DetailViewController: UITableViewDelegate {
 //                guard let nome = cachorroTocado.name else { return }
 //                guard let dog = cachorroTocado else {return}
                 self.deleteFavorite(dog: cachorroTocado)
-                
             }
             // salvar no userDefaults é um dicionario
             //criar uma VC para mostrar os fav
             // criar a exclusao de um cachorro fav
         }
-        
         
         
 }

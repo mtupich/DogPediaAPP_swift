@@ -10,9 +10,14 @@ import SnapKit
 
 class CelulaCustomizadaCachorroTableViewCell: UITableViewCell {
 
+//    @IBOutlet weak var uiiv_Image: UIImageView!
+//    @IBOutlet weak var uil_Titulo: UILabel!
+//    @IBOutlet weak var cardView: UIView!
+    
+    
     @IBOutlet weak var uiiv_Image: UIImageView!
     @IBOutlet weak var uil_Titulo: UILabel!
-
+    @IBOutlet weak var cardView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +42,13 @@ class CelulaCustomizadaCachorroTableViewCell: UITableViewCell {
         self.uiiv_Image.layer.cornerRadius = 10
         self.uiiv_Image.layer.borderWidth = 1.0
         self.uiiv_Image.layer.masksToBounds = true
-        
+
+
+        self.cardView.layer.cornerRadius = 15
+        self.cardView.layer.shadowColor = UIColor.black.cgColor
+        self.cardView.layer.shadowOpacity = 0
+        self.cardView.layer.shadowOffset = .zero
+        self.cardView.layer.shadowRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

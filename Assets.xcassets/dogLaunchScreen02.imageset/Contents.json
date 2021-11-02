@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "dogLaunchScreen02.png",
+      "filename" : "dogLaunchScreen02@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "dogLaunchScreen02@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "dogLaunchScreen02@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

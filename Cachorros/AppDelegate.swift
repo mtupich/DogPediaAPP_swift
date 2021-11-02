@@ -18,8 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let api = API()
-        self.window?.rootViewController = UINavigationController(rootViewController: ViewController(api: api))
-        self.window?.makeKeyAndVisible()
+        if Reachability.isConnectedToNetwork() {
+            self.window?.rootViewController = UINavigationController(rootViewController: ViewController(api: api))
+            self.window?.makeKeyAndVisible()
+        } else {
+            self.window?.rootViewController = UINavigationController(rootViewController: TesteController())
+            self.window?.makeKeyAndVisible()
+        }
+//        self.window?.rootViewController = UINavigationController(rootViewController: ViewController(api: api))
+//        self.window?.makeKeyAndVisible()
         
         return true
     }

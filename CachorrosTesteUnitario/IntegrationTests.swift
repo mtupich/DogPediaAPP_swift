@@ -5,18 +5,14 @@
 //  Created by Maria Eduarda Tupich on 29/10/21.
 //
 
-
 import XCTest
 @testable import Cachorros
 
 class IntegrationTests: XCTestCase {
-    
         func testAPIntegration() {
-            
             let api = API()
             let sut = ViewController(api: api)
             sut.loadViewIfNeeded()
-            
             sleep(5)
             guard sut.arrayCachorros.count > 0 else {
                 XCTFail()

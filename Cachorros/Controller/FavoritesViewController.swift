@@ -8,55 +8,46 @@
 import Foundation
 import UIKit
 
-
 extension UIViewController {
 
     func saveUserDefaults(dog: Cachorro) {
         let defaults = UserDefaults.standard
-        
         var cachorrosFavoritados = self.getUserDefaults()
-        
-        if !cachorrosFavoritados.contains(where: {$0.name == dog.name}){
-            cachorrosFavoritados.append(dog)
+        if !cachorrosFavoritados.contains(where: {$0.name == dog.name}){ cachorrosFavoritados.append(dog)
             defaults.set(try? PropertyListEncoder().encode(cachorrosFavoritados), forKey: "cachorros")
         }
-        
         _ = self.getUserDefaults()
-        
     }
-    
     func deleteFavorite(dog: Cachorro) {
-//        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
-//
-//        // Create OK button with action handler
-//        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-//             print("Ok button tapped")
-//             self.deleteRecord()
-//        })
-//
-//        // Create Cancel button with action handlder
-//        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-//            print("Cancel button tapped")
-//        }
-//
-//        //Add OK and Cancel button to dialog message
-//        dialogMessage.addAction(ok)
-//        dialogMessage.addAction(cancel)
-//
-//        // Present dialog message to user
-//        self.present(dialogMessage, animated: true, completion: nil)
-        
-//        UserDefaults.standard.set(try? PropertyListEncoder().encode(dog), forKey: key)
-        let defaults = UserDefaults.standard
-        var arrayFavoritos = self.getUserDefaults()
-        if let index = arrayFavoritos.firstIndex(where: { $0.name == dog.name }) {
-            print(index)
-            arrayFavoritos.remove(at: index)
+        let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?",
+                                              preferredStyle: .alert)
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+             print("Ok button tapped")
+            let defaults = UserDefaults.standard
+            var arrayFavoritos = self.getUserDefaults()
+            if let index = arrayFavoritos.firstIndex(where: { $0.name == dog.name }) {
+                print(index)
+                arrayFavoritos.remove(at: index)
+            }
+    //        arrayFavoritos.remove(at: index)
+            print(arrayFavoritos)
+            defaults.set(try? PropertyListEncoder().encode(arrayFavoritos), forKey: "cachorros")
+            _ = self.getUserDefaults()
+        })
+
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
         }
-//        arrayFavoritos.remove(at: index)
-        print(arrayFavoritos)
-        defaults.set(try? PropertyListEncoder().encode(arrayFavoritos), forKey: "cachorros")
-        _ = self.getUserDefaults()
+
+        // Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        
     }
 
     func getUserDefaults() -> [Cachorro] {
@@ -67,8 +58,8 @@ extension UIViewController {
             userData = try? PropertyListDecoder().decode([Cachorro].self, from: data)
             return userData!
         } else {
+            userData = []
             return userData
         }
     }
 }
-

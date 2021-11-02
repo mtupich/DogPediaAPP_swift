@@ -5,7 +5,7 @@
 //  Created by Maria Eduarda Tupich on 27/10/21.
 //
 
-//item da  api
+// item da  api
 
 struct Cachorro: Codable {
     
@@ -17,17 +17,17 @@ struct Cachorro: Codable {
         case note
     }
     
-    var _id         : String?
-    var name        : String?
-    var wikilink    : String?
-    var image       : String?
-    var note        : String?
+    var _id: String?
+    var name: String?
+    var wikilink: String?
+    var image: String?
+    var note: String?
     
     init(_id        : String? = nil,
-        name        : String? = nil,
-        wikilink    : String? = nil,
-        image       : String? = nil,
-        note        : String? = nil
+        name: String? = nil,
+        wikilink: String? = nil,
+        image: String? = nil,
+        note: String? = nil
     ) {
         self._id        = _id
         self.name       = name
@@ -36,4 +36,3 @@ struct Cachorro: Codable {
         self.note       = note
     }
 }
-
