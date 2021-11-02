@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 import Kingfisher
 
 class ViewController: UIViewController {
@@ -13,9 +14,11 @@ class ViewController: UIViewController {
     var api: CachorroAPI?
     let reuseIdentifier = "Celula"
     var favoritos : Bool = false
+    
     lazy var uitv_Tabela: UITableView = {
 
         var tabela = UITableView()
+        
         tabela.frame = self.view.bounds
         tabela.dataSource = self
         tabela.delegate = self
@@ -23,6 +26,8 @@ class ViewController: UIViewController {
         // tabela.register(CelulaCustomizadaElefanteTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         let nib = UINib(nibName: "CelulaCustomizadaCachorroTableViewCell", bundle: nil)
         tabela.register(nib, forCellReuseIdentifier: reuseIdentifier)
+        
+        
         return tabela
 
     }()
@@ -31,7 +36,7 @@ class ViewController: UIViewController {
         self.init()
         self.api = api
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let barAppearance = UINavigationBarAppearance()
@@ -39,9 +44,9 @@ class ViewController: UIViewController {
         navigationItem.standardAppearance = barAppearance
         navigationItem.scrollEdgeAppearance = barAppearance
         // Do any additional setup after loading the view.
-        self.title = !favoritos ? "Lista de Cachorros" : "Favoritos"
-        
-        
+      //  self.title = !favoritos ? "Lista de Cachorros" : "Favoritos"
+        self.title = !favoritos ? "Lista de cachorros" : "Favoritos"
+    
         self.view.addSubview(self.uitv_Tabela)
         
         self.populaArrayCachorrosAtualizaTableView() { [weak self] result in
@@ -56,6 +61,7 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+   
         print("Quantidade de Cachorros: \(self.arrayCachorros.count)")
         
         // self.uitv_Tabela.reloadData()
@@ -63,6 +69,9 @@ class ViewController: UIViewController {
 
         
     }
+
+    
+    
     func populaArrayCachorrosAtualizaTableView(completion: @escaping (Result<[Cachorro], CachorroApiError>) -> Void) {
         if !favoritos {
            
