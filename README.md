@@ -38,6 +38,7 @@ Nesse aplicativo é possível observar os seguintes requisitos:
 - Xcode13+
 - Swift5+
 - iOS15+
+- KingFisher7.1+
   
 ____________________________  
 
