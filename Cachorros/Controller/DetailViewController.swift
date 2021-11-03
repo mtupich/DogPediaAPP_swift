@@ -30,8 +30,7 @@ import SafariServices
 
     }()
     
-        //tabela.backgroundColor = .clear
-        //tabela.register(CelulaCustomizadaElefanteTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -141,25 +140,14 @@ extension DetailViewController: UITableViewDelegate {
         
         if indexPath.row == 4 {
             
-//            let defaults = UserDefaults()
-//            guard let nome = cachorroTocado.name else { return }
-//            defaults.set([nome], forKey: "cachorros")
-            
             if(!favoritos){
-//                guard let dog = cachorroTocado else { return }
-               
-                //self.saveUserDefaults(dog: cachorroTocado) oi
-                
+
                 self.saveUserDefaults(dog: cachorroTocado)
                 
             }else{
-//                guard let nome = cachorroTocado.name else { return }
-//                guard let dog = cachorroTocado else {return}
+
                 self.deleteFavorite(dog: cachorroTocado)
             }
-            // salvar no userDefaults é um dicionario
-            //criar uma VC para mostrar os fav
-            // criar a exclusao de um cachorro fav
         }
         
         

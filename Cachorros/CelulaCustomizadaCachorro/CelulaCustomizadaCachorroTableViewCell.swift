@@ -10,10 +10,6 @@ import SnapKit
 
 class CelulaCustomizadaCachorroTableViewCell: UITableViewCell {
 
-//    @IBOutlet weak var uiiv_Image: UIImageView!
-//    @IBOutlet weak var uil_Titulo: UILabel!
-//    @IBOutlet weak var cardView: UIView!
-    
     
     @IBOutlet weak var uiiv_Image: UIImageView!
     @IBOutlet weak var uil_Titulo: UILabel!
@@ -22,22 +18,7 @@ class CelulaCustomizadaCachorroTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-//        uil_Titulo.snp.makeConstraints { make in
-//
-//            make.top.equalTo(self).offset(10)
-//            make.right.equalTo(self).offset(0)
-//            make.left.equalTo(uiiv_Image.snp.right).offset(25)
-//            make.bottom.equalTo(self).offset(10)
-//        }
-//
-//
-//        self.uiiv_Image.snp.makeConstraints { make in
-//            make.top.equalTo(self).offset(10)
-//            make.bottom.equalTo(self).offset(-10)
-//            make.centerX.equalTo(self)
-//            make.centerY.equalTo(self)
-//        }
+
         
         self.uiiv_Image.layer.cornerRadius = 10
         self.uiiv_Image.layer.borderWidth = 1.0

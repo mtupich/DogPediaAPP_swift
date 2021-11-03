@@ -26,9 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         
-//        self.window?.rootViewController = UINavigationController(rootViewController: ViewController(api: api))
-//        self.window?.makeKeyAndVisible()
-        
         return true
     }
 

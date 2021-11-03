@@ -13,8 +13,6 @@ extension UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
     }
     
-    static func coralRed() -> UIColor {
-        return UIColor.rgb(red: 255, green: 64, blue: 64)
-    }
+
 }
 

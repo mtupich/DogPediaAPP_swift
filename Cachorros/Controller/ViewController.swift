@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     lazy var uitv_Tabela: UITableView = {
 
         var tabela = UITableView()
+
         
         tabela.frame = self.view.bounds
         tabela.dataSource = self
