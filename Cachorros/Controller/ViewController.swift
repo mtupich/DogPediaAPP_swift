@@ -54,6 +54,20 @@ class ViewController: UIViewController {
         
         
         // buscar os cachorros
+   
+        self.createRightBarButton()
+
+        
+    }
+    
+    // ---------------------------------------------------------------------------------------
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // esvaziando o array
+        //
+        self.arrayCachorros = []
+        //busca os cachorros
         self.populaArrayCachorrosAtualizaTableView() { [weak self] result in
             guard self != nil else { return }
             switch result {
@@ -68,18 +82,10 @@ class ViewController: UIViewController {
         }
    
         print("Quantidade de Cachorros: \(self.arrayCachorros.count)")
-        
-        self.uitv_Tabela.reloadData()
-        self.createRightBarButton()
-
-        
-    }
-    
-    // ---------------------------------------------------------------------------------------
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        DispatchQueue.main.async {
+            self.uitv_Tabela.reloadData()
+        }
+      
       
     }
 
