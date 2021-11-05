@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = .rgb(red: 153, green: 195, blue: 206)
+        barAppearance.backgroundColor = .rgb(red: 225, green: 136, blue: 72)
         navigationItem.standardAppearance = barAppearance
         navigationItem.scrollEdgeAppearance = barAppearance
         // Do any additional setup after loading the view.
@@ -52,20 +52,22 @@ class ViewController: UIViewController {
     
         self.view.addSubview(self.uitv_Tabela)
         
-//        self.populaArrayCachorrosAtualizaTableView() { [weak self] result in
-//            guard self != nil else { return }
-//            switch result {
-//            case .success(let cachorros):
-//                self?.arrayCachorros = cachorros
-//                DispatchQueue.main.async {
-//                    self?.uitv_Tabela.reloadData()
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        
+        // buscar os cachorros
+        self.populaArrayCachorrosAtualizaTableView() { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case .success(let cachorros):
+                self?.arrayCachorros = cachorros
+                DispatchQueue.main.async {
+                    self?.uitv_Tabela.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
    
-       // print("Quantidade de Cachorros: \(self.arrayCachorros.count)")
+        print("Quantidade de Cachorros: \(self.arrayCachorros.count)")
         
         self.uitv_Tabela.reloadData()
         self.createRightBarButton()
@@ -78,18 +80,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.populaArrayCachorrosAtualizaTableView() { [weak self] result in
-                    guard self != nil else { return }
-                    switch result {
-                    case .success(let cachorros):
-                        self?.arrayCachorros = cachorros
-                        DispatchQueue.main.async {
-                            self?.uitv_Tabela.reloadData()
-                        }
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
+      
     }
 
     // ---------------------------------------------------------------------------------------
@@ -118,13 +109,11 @@ class ViewController: UIViewController {
                 let dog = Cachorro(_id: item._id, name: item.name, wikilink: item.wikilink,
                                    image: item.image, note: item.note)
                 
-// --------------- Esvaziar o vetor de cachorros antes de dar o append --------------------------------------
-                
                 self.arrayCachorros.append(dog)
             }
         }
-        self.uitv_Tabela.reloadData()
-        // self.descobrirAsEspecies(elefantes: self.arrayDeElefantes)
+       self.uitv_Tabela.reloadData()
+
     }
     func createRightBarButton() {
         let heartImage = UIImage(systemName: "heart.fill")

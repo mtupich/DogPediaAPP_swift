@@ -35,7 +35,7 @@ import SafariServices
         super.viewDidLoad()
         
         let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = .rgb(red: 153, green: 195, blue: 206)
+        barAppearance.backgroundColor = .rgb(red: 225, green: 136, blue: 72)
         navigationItem.standardAppearance = barAppearance
         navigationItem.scrollEdgeAppearance = barAppearance
         
